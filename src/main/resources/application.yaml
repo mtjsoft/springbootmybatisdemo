@@ -1,0 +1,15 @@
+#端口
+server:
+  port: 8082
+  servlet:
+    context-path: /
+#数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+#mybatis
+mybatis:
+  type-aliases-package: com.mtjsoft.www.springbootmybatisredis.entity
