@@ -6,10 +6,12 @@ server:
 #数据库
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: root
+    password: mtjroot
 #mybatis
 mybatis:
   type-aliases-package: com.mtjsoft.www.springbootmybatisredis.entity
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:xml/*.xml

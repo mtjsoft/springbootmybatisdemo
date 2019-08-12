@@ -1,23 +1,17 @@
 package com.mtjsoft.www.springbootmybatisredis.service;
 
 import com.mtjsoft.www.springbootmybatisredis.entity.User;
-import com.mtjsoft.www.springbootmybatisredis.mapper.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class UserService {
+public interface UserService {
+    int deleteByPrimaryKey(Integer id);
 
-    @Autowired
-    private UserMapper userMapper;
+    int insert(User record);
 
-    public List<User> getAllUser(){
-        return userMapper.getAll();
-    }
+    User selectByPrimaryKey(Integer id);
 
-    public User getUser(Long id){
-        return userMapper.getOne(id);
-    }
+    List<User> selectAll();
+
+    int updateByPrimaryKey(User record);
 }

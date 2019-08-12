@@ -1,24 +1,16 @@
 package com.mtjsoft.www.springbootmybatisredis.mapper;
 
 import com.mtjsoft.www.springbootmybatisredis.entity.User;
-import org.apache.ibatis.annotations.*;
-
 import java.util.List;
 
 public interface UserMapper {
+    int deleteByPrimaryKey(Integer id);
 
-    @Select("SELECT * FROM user")
-    List<User> getAll();
+    int insert(User record);
 
-    @Select("SELECT * FROM user WHERE id = #{id}")
-    User getOne(Long id);
+    User selectByPrimaryKey(Integer id);
 
-    @Insert("INSERT INTO user(username,userpassword) VALUES(#{username}, #{userpassword})")
-    void insert(User user);
+    List<User> selectAll();
 
-    @Update("UPDATE user SET username=#{username},userpassword=#{userpassword} WHERE id =#{id}")
-    void update(User user);
-
-    @Delete("DELETE FROM user WHERE id =#{id}")
-    void delete(Long id);
+    int updateByPrimaryKey(User record);
 }
